@@ -1,0 +1,13 @@
+{
+  "logLevel": "debug",
+  "mongodb":{
+    "username": "username",
+    "password": "password:",
+    "hosts": ["mongo2.redyser.com:27017","barcodes1.redyser.com:27017","webapps1.redyser.com:27017"],
+    "database": "buzones",
+    "replicaSet": "mongo1",
+    "ssl": false,
+    "options": "authSource=admin"
+  },
+  "secret": "secret."
+}

@@ -1,0 +1,24 @@
+FROM node:boron
+
+RUN npm install nodemon -g
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# Install app dependencies
+ADD app/package.json .
+# For npm@5 or later, copy package-lock.json as well
+# COPY package.json package-lock.json ./
+
+ADD app/nodemon.json /usr/src/app/nodemon.json
+
+#RUN npm install
+
+# Bundle app source
+#COPY ./app /usr/src/app
+
+EXPOSE 3000
+#CMD [ "npm", "start" ]
+#ENTRYPOINT ["node", "server.js"]
+ENTRYPOINT ["nodemon", "server.js"]
+CMD ["-p", "3001", "-f", "configs/localhost.api-config.json"]

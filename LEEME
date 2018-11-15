@@ -1,0 +1,25 @@
+Aplicación en Nodejs y docker. La aplicación Nodejs está en la carpeta "app" y en la carpeta raiz están los archivos de configuración de docker. También hay una carpeta "data/db" para que se cree y guarden loo datos de la base de datos MongoDB creada en el docker. 
+
+Antes de ejecutar la aplicación hay que intalar sus módulos:
+
+> cd app
+> npm install
+> cd ..
+
+La primera vez la base de datos local (docker) MongoDB estará bacía y deberemos entrar a ella con alguna herreamienta (Robomongo) a localhost:27017 (sin user ni password) y crearla (skeleton). Y la colección 'mensajes' con algún elemento. La aplicación skeleton sólo hace un count, no importa el formato.
+
+Se necesita tener instalado en el equipo de desarrollo NodeJS (v8.12.0) docker(version 18.09.0) y docker-compose(version 1.18.0). Para lanzar la aplicación:
+
+> docker-compose -f docker-compose.dev.yml up --build
+
+Las siguientes veces y una vez estan creados los contenedores si sólo modificamos el código no necesitaremos --build.
+
+
+Con esto ya tendremos nuestra API NodeJS funcionando con MongoDB. Ponemos la siguiente url en el navegador:
+
+ > curl -i  http://localhost:3001/api
+
+Debería salirnos un mensaje:
+
+Api v1.0.
+

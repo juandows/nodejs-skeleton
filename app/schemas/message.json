@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "message",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object"
+    },
+    "leido": {
+      "type": "boolean"
+    },
+    "borrado": {
+      "type": "boolean"
+    },
+    "expireAt": {
+      "$ref": "date-definitions#/date-time"
+    }
+  },
+  "required": ["data"]
+
+}

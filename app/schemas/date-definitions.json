@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "date-definitions",
+  "date-time": {
+    "type": "string",
+    "format": "date-time",
+    "description": "YYYY-MM-DDTHH:mm:ss[.SSS][Z/((+/-)HH:mm)]"
+  },
+  "date": {
+    "type": "string",
+    "format": "date",
+    "description": "YYYY-MM-DD"
+  },
+  "time": {
+    "type": "string",
+    "format": "time",
+    "description": "HH:mm:ss[.SSS][Z/((+/-)HH:mm)]"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "api-config",
+  "type": "object",
+  "properties": {
+    "logLevel": {
+      "type": "string",
+      "enum": ["error", "warn", "info", "verbose", "debug", "silly"]
+    },
+    "mongodb": {
+      "$ref": "mongodb#"
+    }
+  },
+  "required": ["mongodb"]
+}

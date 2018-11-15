@@ -1,0 +1,9 @@
+{
+  "logLevel": "debug",
+  "mongodb":{
+    "hosts": ["db"],
+    "database": "skeleton",
+    "ssl": false
+  },
+  "secret": "rrhwQ.czdNg"
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "mongodb",
+  "type": "object",
+  "allOf": [
+    {
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "hosts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "database": {
+          "type": "string"
+        },
+        "replicaSet": {
+          "type": "string"
+        },
+        "options":{
+          "type": "string" 
+        }
+      },
+      "required": ["hosts", "database"],
+      "dependencies": {
+        "username": ["password"],
+        "password": ["username"]
+      }
+    },
+    {
+      "oneOf": [
+        {
+          "properties": {
+            "ssl": {
+              "type": "boolean",
+              "enum": [true]
+            },
+            "sslCert": {
+              "type": "string"
+            },
+            "sslKey": {
+              "type": "string"
+            },
+            "sslCA": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            }
+          },
+          "required": ["ssl", "sslCert", "sslKey", "sslCA"]
+        },
+        {
+          "properties": {
+            "ssl": {
+              "type": "boolean",
+              "enum": [false]
+            }
+          },
+          "required": ["ssl"]
+        }
+      ]
+    }
+  ]
+}
